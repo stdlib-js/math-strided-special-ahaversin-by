@@ -1,0 +1,60 @@
+{
+  "name": "@stdlib/math-strided-special-ahaversin-by",
+  "version": "0.0.0",
+  "description": "Compute the inverse half-value versed sine of each element retrieved from an input strided array via a callback function.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "main": "./mod.js",
+  "homepage": "https://stdlib.io",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/stdlib-js/math-strided-special-ahaversin-by.git"
+  },
+  "bugs": {
+    "url": "https://github.com/stdlib-js/stdlib/issues"
+  },
+  "keywords": [
+    "stdlib",
+    "stdmath",
+    "mathematics",
+    "math",
+    "ahaversin",
+    "ahaversine",
+    "arcversin",
+    "arcversine",
+    "versedsine",
+    "ahaversinus",
+    "haversine",
+    "haversin",
+    "archav",
+    "invhav",
+    "ahav",
+    "ahvs",
+    "ahv",
+    "hav",
+    "arc",
+    "versed",
+    "half-value",
+    "sine",
+    "sin",
+    "asin",
+    "trig",
+    "trigonometry",
+    "radians",
+    "angle",
+    "vector",
+    "array",
+    "strided",
+    "ndarray",
+    "element-wise",
+    "map",
+    "transform",
+    "accessor",
+    "callback",
+    "clbk"
+  ],
+  "funding": {
+    "type": "patreon",
+    "url": "https://www.patreon.com/athan"
+  }
+}
