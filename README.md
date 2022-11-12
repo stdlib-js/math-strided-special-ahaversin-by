@@ -32,20 +32,30 @@ limitations under the License.
 
 <!-- /.intro -->
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/math-strided-special-ahaversin-by
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm` branch][esm-url].
+-   If you are using Deno, visit the [`deno` branch][deno-url].
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd` branch][umd-url].
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-import ahaversinBy from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-strided-special-ahaversin-by@deno/mod.js';
-```
-
-You can also import the following named exports from the package:
-
-```javascript
-import { ndarray } from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-strided-special-ahaversin-by@deno/mod.js';
+var ahaversinBy = require( '@stdlib/math-strided-special-ahaversin-by' );
 ```
 
 #### ahaversinBy( N, x, strideX, y, strideY, clbk\[, thisArg] )
@@ -102,7 +112,7 @@ ahaversinBy( x.length, x, 1, y, 1, accessor, context );
 // y => [ 0.0, ~1.571, ~3.142, ~1.047, ~2.094 ]
 
 var cnt = context.count;
-// returns 8
+// returns 5
 ```
 
 The `N` and `stride` parameters determine which elements in `x` and `y` are accessed at runtime. For example, to index every other value in `x` and to index the first `N` elements of `y` in reverse order,
@@ -122,7 +132,7 @@ ahaversinBy( 3, x, 2, y, -1, accessor );
 Note that indexing is relative to the first index. To introduce an offset, use [`typed array`][mdn-typed-array] views.
 
 ```javascript
-import Float64Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float64@deno/mod.js';
+var Float64Array = require( '@stdlib/array-float64' );
 
 function accessor( v ) {
     return v;
@@ -208,9 +218,10 @@ ahaversinBy.ndarray( 3, x, 2, 1, y, -1, y.length-1, accessor );
 <!-- eslint no-undef: "error" -->
 
 ```javascript
-import uniform from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-uniform@deno/mod.js';
-import filledarray from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-filled@deno/mod.js';
-import ahaversinBy from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-strided-special-ahaversin-by@deno/mod.js';
+var uniform = require( '@stdlib/random-base-uniform' ).factory;
+var filledarray = require( '@stdlib/array-filled' );
+var filledarrayBy = require( '@stdlib/array-filled-by' );
+var ahaversinBy = require( '@stdlib/math-strided-special-ahaversin-by' );
 
 function accessor( v, i ) {
     if ( (i%3) === 0 ) {
@@ -220,14 +231,10 @@ function accessor( v, i ) {
     return v;
 }
 
-var x = filledarray( 0.0, 10, 'generic' );
-var y = filledarray( null, 10, 'generic' );
-
-var i;
-for ( i = 0; i < x.length; i++ ) {
-    x[ i ] = uniform( 0.0, 1.0 );
-}
+var x = filledarrayBy( 10, 'generic', uniform( 0.0, 1.0 ) );
 console.log( x );
+
+var y = filledarray( null, 10, 'generic' );
 console.log( y );
 
 ahaversinBy.ndarray( x.length, x, 1, 0, y, -1, y.length-1, accessor );
@@ -255,7 +262,7 @@ console.log( y );
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
@@ -319,7 +326,7 @@ Copyright &copy; 2016-2022. The Stdlib [Authors][stdlib-authors].
 
 [mdn-typed-array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray
 
-[@stdlib/math/base/special/ahaversin]: https://github.com/stdlib-js/math-base-special-ahaversin/tree/deno
+[@stdlib/math/base/special/ahaversin]: https://github.com/stdlib-js/math-base-special-ahaversin
 
 </section>
 
